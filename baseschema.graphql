@@ -1,0 +1,18 @@
+type Talk @model {
+  id: ID!
+  name: String!
+  speakerName: String!
+  speakerBio: String!
+  time: String!
+  location: String!
+  summary: String!
+  discussions: [Discussion] @connection(name: "TalkDiscussions")
+}
+
+type Discussion @model {
+  id: ID!
+  talkId: ID
+  talk: Talk @connection(sortField: "createdAt", name: "TalkDiscussions", keyField: "talkId")
+  message: String
+  createdAt: String
+}
