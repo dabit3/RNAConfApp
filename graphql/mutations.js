@@ -68,18 +68,6 @@ export const createDiscussion = `mutation CreateDiscussion($input: CreateDiscuss
   createDiscussion(input: $input) {
     id
     talkId
-    talk {
-      id
-      name
-      speakerName
-      speakerBio
-      time
-      location
-      summary
-      discussions {
-        nextToken
-      }
-    }
     message
     createdAt
   }

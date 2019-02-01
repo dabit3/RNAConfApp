@@ -21,10 +21,12 @@ export default class Talk extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20
+    padding: 20,
+    backgroundColor: '#fafafa'
   },
   title: {
     fontSize: 22,
@@ -37,7 +39,9 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   speakerName: {
-    marginBottom: 5
+    marginBottom: 5,
+    fontWeight: '500',
+    fontSize: 16
   },
   time: {
     color: 'rgba(0, 0, 0, .5)'
