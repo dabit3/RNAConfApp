@@ -68,10 +68,10 @@ export const onCreateDiscussion = `subscription OnCreateDiscussion(
   $talkId: ID!
   ) {
   onCreateDiscussion(talkId: $talkId) {
-    id
+    
     talkId
     message
-    createdAt
+    
   }
 }
 `;

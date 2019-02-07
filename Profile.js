@@ -36,11 +36,13 @@ const styles = StyleSheet.create({
   },
   username: {
     fontSize: 26,
-    marginBottom: 5
+    marginBottom: 5,
+    fontFamily: 'Lato-Regular'
   },
   email: {
     color: 'rgba(0, 0, 0, .45)',
     fontSize: 20,
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: 'Lato-Regular'
   }
 });

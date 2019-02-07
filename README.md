@@ -30,3 +30,10 @@ ListDiscussions resolver (response mapping template):
     "nextToken": $util.toJson($util.defaultIfNullOrBlank($context.result.nextToken, null))
 }
 ```
+
+Also need to update the onCreateDiscussion definition in the Schema to include the talkid:
+
+```
+onCreateDiscussion(talkId: ID!): Discussion
+		@aws_subscribe(mutations: ["createDiscussion"])
+```

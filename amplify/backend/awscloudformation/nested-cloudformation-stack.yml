@@ -81,7 +81,7 @@
 		"authauth": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/rna2019-20190129080911-deployment/amplify-cfn-templates/auth/auth-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/rna2019-20190206144121-deployment/amplify-cfn-templates/auth/auth-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "rnaconfidpool",
 					"allowUnauthenticatedIdentities": false,
@@ -139,14 +139,14 @@
 							"Arn"
 						]
 					},
-					"env": "local"
+					"env": "dev"
 				}
 			}
 		},
 		"apirna2019": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/rna2019-20190129080911-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/rna2019-20190206144121-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "rna2019",
 					"AuthCognitoUserPoolId": {
@@ -155,11 +155,11 @@
 							"Outputs.UserPoolId"
 						]
 					},
-					"schemaGraphql": "s3://rna2019-20190129080911-deployment/amplify-appsync-files/schema.graphql.1548836170000",
-					"ResolverBucket": "rna2019-20190129080911-deployment",
+					"schemaGraphql": "s3://rna2019-20190206144121-deployment/amplify-appsync-files/schema.graphql.1549493267796",
+					"ResolverBucket": "rna2019-20190206144121-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1548836170000",
-					"env": "local"
+					"DeploymentTimestamp": "1549493267796",
+					"env": "dev"
 				}
 			}
 		}

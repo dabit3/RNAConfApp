@@ -1,15 +1,19 @@
 import React, {Component} from 'react'
-import {ScrollView, TouchableOpacity, StyleSheet, Text, View} from 'react-native'
+import {Image, ScrollView, TouchableOpacity, StyleSheet, Text, View} from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import Pager from './Pager'
+import { colors } from './theme'
+import BaseHeader from './BaseHeader'
 
 import { API, graphqlOperation } from 'aws-amplify'
 import { listTalks } from './graphql/queries'
 
+const logo = require('./assets/logo.jpg')
+
 class Schedule extends Component {
-  static navigationOptions = {
-    title: "RNA Schedule",
-  }
+  static navigationOptions = props => ({
+    header: <BaseHeader {...props} title="RNA Schedule" />
+  })
   state = {
     talks: []
   }
@@ -48,6 +52,12 @@ class Schedule extends Component {
 const ScheduleNav = createStackNavigator({
   Schedule: { screen: Schedule },
   Talk: { screen: Pager }
+}, {
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: colors.primary
+    },
+  }
 })
 
 export default ScheduleNav

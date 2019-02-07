@@ -26,7 +26,7 @@ export default class Discussion extends Component {
       console.log('error fetching talks: ', err)
     }
 
-    API.graphql(
+    const subscription = API.graphql(
       graphqlOperation(OnCreateDiscussion, { talkId: params.id })
     )
     .subscribe({
