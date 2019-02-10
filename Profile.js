@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-
 import { Auth } from 'aws-amplify'
 
+import BaseHeader from './BaseHeader'
+
 export default class Profile extends Component {
+  
   state = {
     username: 'some username',
     email: 'some email'
@@ -20,8 +22,11 @@ export default class Profile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.username}>{this.state.username}</Text>
-        <Text style={styles.email}>{this.state.email}</Text>
+        <BaseHeader />
+        <View style={styles.profileContainer}>
+          <Text style={styles.username}>{this.state.username}</Text>
+          <Text style={styles.email}>{this.state.email}</Text>
+        </View>
       </View>
     );
   }
@@ -30,9 +35,9 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
-    paddingHorizontal: 20,
-    backgroundColor: '#F5FCFF',
+  },
+  profileContainer: {
+    padding: 20
   },
   username: {
     fontSize: 26,

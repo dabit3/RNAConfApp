@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
   logo: {
     position: 'absolute',
     left: 10,
-    bottom: 5,
+    bottom: 7,
     width: 100,
-    height: 30
+    height: 35
   },
   title: {
     color: 'white',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
     alignItems: 'center',
-    height: 80
+    height: 88
   }
 })
 

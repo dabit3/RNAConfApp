@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import { withAuthenticator } from 'aws-amplify-react-native'
 
 import Schedule from './Schedule'
 import Profile from './Profile'
 
-import { withAuthenticator } from 'aws-amplify-react-native'
+import { colors } from './theme'
 
 const Tabs = createBottomTabNavigator({
   Schedule: {
@@ -14,15 +14,28 @@ const Tabs = createBottomTabNavigator({
   },
   Profile: {
     screen: Profile,
+  },
+  Map: {
+    screen: Profile,
   }
 }, {
+  tabBarOptions: {
+    activeTintColor: '#61dafb',
+    inactiveTintColor: '#fafafa',
+    style: {
+      backgroundColor: colors.primary
+    }
+  },
   defaultNavigationOptions: ({ navigation }) => ({
-    tabBarIcon: () => {
+    tabBarIcon: ({ tintColor }) => {
       const { routeName } = navigation.state
       if (routeName === 'Schedule') {
-        return <Icon size={20} name='calendar' />
+        return <Icon color={tintColor} size={20} name='calendar' />
       }
-      return <Icon size={20} name='user' />
+      if (routeName === 'Map') {
+        return <Icon color={tintColor} size={20} name='map' />
+      }
+      return <Icon color={tintColor} size={20} name='user' />
     }
   })
 })
